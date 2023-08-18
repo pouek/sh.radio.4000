@@ -8,21 +8,21 @@ Arrêt du flux et retour à l'acceuil avec le raccouris Ctrl + C. Ensuite pour r
 - Télécharger le fichier .sh
 - Le rendre exécutable avec
 ```
-  chmod u+x radio.sh 
+chmod u+x radio.sh 
 ```
 
 ### Utilisation
 L'exécuter directement avec :
 ```
-    ./radio.sh # si on est déjà dans le dossier
+./radio.sh # si on est déjà dans le dossier
 ```
 ```
-    /chemin/complet/radio.sh # sinon
+/chemin/complet/radio.sh # sinon
 ```
-Créer un raccourcis clavier en faisant exécuter "bash -c /chemin/complet/radio.sh" à son terminal.
+Créer un raccourcis clavier de son choix, qui fera lancer "bash -c /chemin/complet/radio.sh" à son terminal.
 Exemples :
 ```
-    gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
+gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
 
 ```
 ### À faire
