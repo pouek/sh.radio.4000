@@ -21,6 +21,7 @@ Exemples :
 ### À faire
 - ajouter la fonction d'ajout / suppression de radio, c'est à dire de couple flux + nom
 - ce qui nécessite d'ajouter un menu pour basculer entre lecture et gestion de la liste de radios
+- ajouter d'autres exemples de raccourcis clavier selon les différents terminaux et leurs syntaxes.
 
 ### Rêve
 Rediriger la sortie de mplayer dans lolcat..
