@@ -14,10 +14,10 @@ arriver à rediriger la sortie de mplayer dans lolcat
 Installation : 
 télécharger le fichier .sh
 le rendre exécutable avec 
-> chmod u+x radio.sh 
-l'exécuter avec
-> ./radio.sh # si on est dans le dossier
-> /chemin/complet/radio.sh
+  chmod u+x radio.sh 
+l'exécuter avec 
+  ./radio.sh # si on est déjà dans le dossier
+  /chemin/complet/radio.sh # sinon
 On peut créer un raccourcis clavier en faisant exécuter "bash -c /chemin/complet/radio.sh" à son terminal.
 Exemples :
-> gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
+  gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
