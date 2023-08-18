@@ -4,10 +4,6 @@ Nécessite le lecteur mplayer.
 Sélection d'un flux à l'aide du numéro correspondant puis touche Entrée.
 Arrêt du flux et retour à l'acceuil avec le raccouris Ctrl + C. Ensuite pour refaire apparaître la liste des radios, taper Entrée.
 
-### À faire
-- ajouter la fonction d'ajout / suppression de radio, c'est à dire de couple flux + nom
-- ce qui nécessite d'ajouter un menu pour basculer entre lecture et gestion de la liste de radios
-
 ### Installation 
 - Télécharger le fichier .sh
 - Le rendre exécutable avec 
@@ -21,6 +17,10 @@ L'exécuter directement avec :
 Créer un raccourcis clavier en faisant exécuter "bash -c /chemin/complet/radio.sh" à son terminal.
 Exemples :
     gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
+
+### À faire
+- ajouter la fonction d'ajout / suppression de radio, c'est à dire de couple flux + nom
+- ce qui nécessite d'ajouter un menu pour basculer entre lecture et gestion de la liste de radios
 
 ### Rêve
 Rediriger la sortie de mplayer dans lolcat..
