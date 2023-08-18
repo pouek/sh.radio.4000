@@ -10,3 +10,14 @@ Arrêt du flux et retour à l'acceuil avec le raccouris Ctrl + C. Ensuite pour r
 
 Rêve : 
 arriver à rediriger la sortie de mplayer dans lolcat
+
+Installation : 
+télécharger le fichier .sh
+le rendre exécutable avec 
+> chmod u+x radio.sh 
+l'exécuter avec
+> ./radio.sh # si on est dans le dossier
+> /chemin/complet/radio.sh
+On peut créer un raccourcis clavier en faisant exécuter "bash -c /chemin/complet/radio.sh" à son terminal.
+Exemples :
+> gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
