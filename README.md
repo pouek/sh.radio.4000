@@ -25,6 +25,13 @@ Exemples :
 gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
 
 ```
+
+Raccourcis clavier mplayer (pendant la lecture, donc) :
+- Augmenter le volume : "0"
+- Diminuer le volume : "9"
+- Couper le son : "M"
+- autres : http://doc.ubuntu-fr.org/mplayer
+
 ### À faire
 - ajouter la fonction d'ajout / suppression de radio, c'est à dire de couple flux + nom
 - ce qui nécessite d'ajouter un menu pour basculer entre lecture et gestion de la liste de radios
