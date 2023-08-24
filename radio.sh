@@ -7,6 +7,3 @@ select opt in "${!radios[@]}"
 do
     mp "${radios[$opt]}"
 done
-
-# Sauvegarde / poubelle :
-#	   AAZO : mp http://77.67.46.74:8000/aazoradio-hiphop.mp3
