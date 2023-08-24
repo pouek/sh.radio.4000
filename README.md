@@ -42,8 +42,6 @@ Arrêt du flux et retour à l'acceuil avec la touche "Q".
 
 Pour refaire apparaître la liste des radios, taper Entrée.
 
-Pas de retour au Menu : "Ctrl + C", et relancer le script... en cours..
-
 #### Raccourcis clavier mpv (pendant la lecture, donc) :
 - Augmenter le volume : "0"
 - Diminuer le volume : "9"
