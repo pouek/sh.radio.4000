@@ -37,10 +37,11 @@ gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.
 #### Lecture d'une radio
 Sélection d'une radio à l'aide du numéro correspondant puis touche Entrée.
 
-Arrêt du flux et retour à l'acceuil avec la touche "Q". 
-Augmenter le volume : "0"
-Diminuer le volume : "9"
-Couper le son : "M"
+Raccourcis clavier :
+ - Q : Arrêt du flux et retour à l'acceuil
+ - O : Augmenter le volume
+ - 9 : Diminuer le volume
+ - M : Couper le son
 
 ### À faire ?
 - ajouter une option de retour au menu depuis les sous-menus.
