@@ -16,6 +16,9 @@ chmod u+x radio.sh
 ```
 
 ### Utilisation
+#### Menu
+Les fonctions lire, ajouter, enlever, archiver, désarchiver sont accessibles depuis le menu d'accueil.
+
 #### Lancement depuis le terminal
 - Si on est déjà dans le dossier
 ```
