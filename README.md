@@ -13,11 +13,13 @@ chmod u+x radio.sh
 
 ### Utilisation
 L'exécuter directement avec :
+- Si on est déjà dans le dossier
 ```
-./radio.sh # si on est déjà dans le dossier
+./radio.sh
 ```
+- Depuis n'importe où
 ```
-/chemin/complet/radio.sh # sinon
+/chemin/complet/vers/radio.sh
 ```
 Créer un raccourcis clavier de son choix, qui fera lancer "bash -c /chemin/complet/radio.sh" à son terminal.
 Exemples :
