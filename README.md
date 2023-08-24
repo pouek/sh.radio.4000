@@ -1,7 +1,7 @@
 # sh.radio.4000
 Lecteur de webradios en bash avec mes radios favorites.
 
-### Prérequis
+### Prérequis
 
 Nécessite le lecteur mpv.
 ```
@@ -25,13 +25,6 @@ chmod u+x radio.sh
 ```
 /chemin/complet/vers/radio.sh
 ```
-#### Menu "lire" 
-
-Sélection d'une radio à l'aide du numéro correspondant puis touche Entrée.
-Arrêt du flux et retour à l'acceuil avec la touche "Q". 
-Pour refaire apparaître la liste des radios, taper Entrée.
-Pas de retour au Menu : "Ctrl + C", et relancer le script... en cours..
-
 #### Lancement par raccourcis clavier 
 
 Il fera lancer "bash -c /chemin/complet/radio.sh" à son terminal.
@@ -41,8 +34,17 @@ Exemples :
 gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
 
 ```
+#### Menu "lire" 
 
-#### Raccourcis clavier mpv (pendant la lecture, donc) :
+Sélection d'une radio à l'aide du numéro correspondant puis touche Entrée.
+
+Arrêt du flux et retour à l'acceuil avec la touche "Q". 
+
+Pour refaire apparaître la liste des radios, taper Entrée.
+
+Pas de retour au Menu : "Ctrl + C", et relancer le script... en cours..
+
+#### Raccourcis clavier mpv (pendant la lecture, donc) :
 - Augmenter le volume : "0"
 - Diminuer le volume : "9"
 - Couper le son : "M"
