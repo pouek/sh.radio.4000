@@ -5,8 +5,8 @@ Sélection d'un flux à l'aide du numéro correspondant puis touche Entrée.
 Arrêt du flux et retour à l'acceuil avec le raccouris Ctrl + C. Ensuite pour refaire apparaître la liste des radios, taper Entrée.
 
 ### Installation 
-- Télécharger le fichier .sh
-- Le rendre exécutable avec
+- Télécharger les fichier radio.sh et radios.txt
+- Rendre le script exécutable avec
 ```
 chmod u+x radio.sh 
 ```
