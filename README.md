@@ -34,17 +34,13 @@ Exemples :
 gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
 
 ```
-#### Menu "lire" 
-
+#### Lecture d'une radio
 Sélection d'une radio à l'aide du numéro correspondant puis touche Entrée.
 
 Arrêt du flux et retour à l'acceuil avec la touche "Q". 
-
-#### Raccourcis clavier mpv (pendant la lecture, donc) :
-- Augmenter le volume : "0"
-- Diminuer le volume : "9"
-- Couper le son : "M"
-- Quitter : "Q"
+Augmenter le volume : "0"
+Diminuer le volume : "9"
+Couper le son : "M"
 
 ### À faire ?
 - ajouter une option de retour au menu depuis les sous-menus.
