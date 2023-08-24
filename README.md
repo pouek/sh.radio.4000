@@ -36,6 +36,13 @@ Exemples :
 gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
 
 ```
+#### Passage d'un choix de menu en paramètre lors du lancement du script
+_Pour sauter l'étape "Menu"_
+
+Exemples : 
+- ``` ./radio.sh lecture ``` ira directement au sous-menu de choix d'une station à lire
+- ``` ./radio.sh aide ``` pour la liste des options
+
 #### Lecture d'une radio
 Sélection d'une radio à l'aide du numéro correspondant puis touche Entrée.
 
@@ -46,7 +53,6 @@ Raccourcis clavier :
  - M : Couper le son
 
 ### À faire ?
-- ajouter la possibilité de passer un des choix du menu en paramètre lors du lancement du script, pour sauter l'étape "Menu" (ex : "./radio.sh --lecture" ira directement au sous-menu de choix d'une station à lire)
 - ajouter une option de retour au menu depuis les sous-menus.
 - ajouter d'autres exemples de raccourcis clavier selon les différents terminaux et leurs syntaxes.
 - documenter comment on ajoute/enleve/archive/désarchive une radio, mais ça me paraît intuitif.
