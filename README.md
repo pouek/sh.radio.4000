@@ -9,12 +9,12 @@ sudo apt install mpv
 ```
 
 ### Installation 
-- Télécharger les fichiers [radio.sh](<https://raw.githubusercontent.com/pouek/sh.radio.4000/main/radios.sh>) et [liste-radios.txt](<https://raw.githubusercontent.com/pouek/sh.radio.4000/main/liste-radios.txt>) ( _Clic-Droit_ > _Enregistrer sous_ )
+- Télécharger le zip dans la catégorie Releases, et extraire les fichiers radio.sh et liste-radios.txt ( _Clic-Droit_ > _Enregistrer sous_ )
+- Conserver ces 2 fichiers dans le même dossier
 - Rendre le script exécutable avec
 ```
 chmod u+x radio.sh 
 ```
-- Conserver les 2 fichiers dans le même dossier
 
 ### Utilisation
 #### Menu
