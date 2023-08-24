@@ -1,56 +1,88 @@
 ##!/data/data/com.termux/files/usr/bin/bash
 #!/bin/bash
-source ./radios.txt
-buf=radios
-arch=archives
-
-function lecture {
+liste=./liste-radios.txt
+source "$liste"
+function ecris { cp "$liste" o."$liste"; declare -p radios > "$liste"; declare -p archives >> "$liste" ;}
+function enregistre {
+    echo "Liste des radios actives : "
+    for clef in "${!radios[@]}";do
+        echo "$clef : ${radios[$clef]}"
+    done
+    echo "Liste des radios archivées : "
+    for clef in "${!archives[@]}";do
+        echo "$clef : ${archives[$clef]}"
+    done
+    read -p "Enregistrer ? (O/n) " enreg
+    if [[ "$enreg" == "[Oo]"* ]] ; then ecris ; fi
+}
+function lis {
 #function mp { echo -e "\033]2;$opt\007" && mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2|lolcat; }
 function mp { echo -e "\033]2;$opt\007" && script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null | grep -v "File tags:" ; } #| lolcat ; }
-PS3='Quel est le numéro de la radio à lire ?'
+PS3='Quel est le numéro de la radio à lire ? '
 select opt in "${!radios[@]}"
 do
     flux="${radios[$opt]}"
-#    if [[ "$flux" ==  *".pls" || "$flux" == *".m3u" ]] ; then 
+#    if [[ "$flux" ==  *".pls" || "$flux" == *".m3u" ]] ; then
 #	mp "-playlist" "$flux"
 #    else
 	mp "$flux"
 #    fi
+    menu
 done
 }
-function ajout {
-read -p "Quel est le nom de la radio ? \
-Caractères autorisés : lettres, chiffres, '-',' _'" nom
-read -p "Quel est l'adresse du flux ?" flux
-buf+="${$nom[$flux]}"
-for cle in "${!buf[@]}";do echo "$cle : ${buf[$cle]}"; done
-read -p "Enregistrer ? (O/n)" enreg
-if [[ "$enreg" == "[Oo]"* ]] ; then echo "ok, en fait la fonction n'est pas finie"; fi
+function ajoute {
+    echo "(Caractères autorisés : lettres, chiffres, '-',' _')"
+    read -p "Quel est le nom de la radio ?" nom
+    read -p "Quel est l'adresse du flux ? " flux
+    radios+=(["$nom"]="$flux")
+    enregistre && menu
 }
-function archive {
-PS3='Entrer le numéro de la radio choisie : '
+function enleve {
+PS3='Quel est le numéro de la radio à enlever ? '
 select opt in "${!radios[@]}"
 do
-    echo "Voici ce que devrait faire la fonction, en cours..."
-    echo unset "${radios[$opt]}"
-    echo arch+="${radios[$opt]}"
+    unset radios["$opt"]
+    enregistre && menu
+done
+}
+function archive {
+PS3='Quel est le numéro de la radio à archiver ? '
+select opt in "${!radios[@]}"
+do
+    archives+=(["$opt"]="${radios[$opt]}")
+    unset radios["$opt"]
+    enregistre && menu
+done
+}
+function desarchive {
+PS3='Quel est le numéro de la radio à désarchiver ? '
+select opt in "${!archives[@]}"
+do
+    radios+=(["$opt"]="{$archives[$opt]}")
+    unset archives["$opt"]
+    enregistre && menu
 done
 }
 function menu {
-actions=( "Lire" "Ajouter" "Archiver" "Quitter")
-PS3='Que veux-tu faire ?'
+clear
+actions=( "Lire" "Ajouter" "Enlever" "Archiver" "Désarchiver" "Quitter")
+PS3='Que veux-tu faire ? '
 select act in "${actions[@]}"
 do
-    case $act in
+    case "$act" in
         "Lire")
-	    lecture ;;
+	    lis ;;
         "Ajouter")
-	    ajout ;;
+	    ajoute ;;
+	"Enlever")
+	    enleve ;;
         "Archiver")
 	    archive ;;
+	"Désarchiver")
+	    desarchive ;;
 	"Quitter")
-            break ;;
-        *) echo "Qu'entends-tu par $act ?" ;;
+            exit 0 ;;
+        *) echo "Qu'entends-tu par $REPLY ?" ;;
     esac
 done
 }
