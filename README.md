@@ -1,5 +1,5 @@
 # sh.radio.4000
-Lecteur de webradios en bash avec mes radios favorites.
+Lecteur de radios internet en langage bash avec mes radios favorites.
 
 ### Prérequis
 
