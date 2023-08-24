@@ -39,7 +39,7 @@ Sélection d'une radio à l'aide du numéro correspondant puis touche Entrée.
 
 Raccourcis clavier :
  - Q : Arrêt du flux et retour à l'acceuil
- - O : Augmenter le volume
+ - 0 : Augmenter le volume
  - 9 : Diminuer le volume
  - M : Couper le son
 
