@@ -56,4 +56,4 @@ Pas de retour au Menu : "Ctrl + C", et relancer le script... en cours..
 - documenter comment on ajoute/enleve/archive/désarchive une radio, mais ça me paraît intuitif.
 
 ### Rêve
-Rediriger la sortie de mpv dans lolcat..
+Pouvoir rediriger la sortie de mpv dans lolcat..
