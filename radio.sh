@@ -14,6 +14,7 @@ function enregistre {
     done
     read -p "Enregistrer ? (O/n) " enreg
     if [[ "$enreg" == "[Oo]"* ]] ; then ecris ; fi
+    menu
 }
 function lis {
 #function mp { echo -e "\033]2;$opt\007" && mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2|lolcat; }
@@ -27,23 +28,23 @@ do
 #    else
 	mp "$flux"
 #    fi
-    menu
 done
+menu
 }
 function ajoute {
     echo "(Caractères autorisés : lettres, chiffres, '-',' _')"
     read -p "Quel est le nom de la radio ?" nom
     read -p "Quel est l'adresse du flux ? " flux
     radios+=(["$nom"]="$flux")
-    enregistre && menu
+    enregistre
 }
 function enleve {
 PS3='Quel est le numéro de la radio à enlever ? '
 select opt in "${!radios[@]}"
 do
     unset radios["$opt"]
-    enregistre && menu
 done
+enregistre
 }
 function archive {
 PS3='Quel est le numéro de la radio à archiver ? '
@@ -51,16 +52,21 @@ select opt in "${!radios[@]}"
 do
     archives+=(["$opt"]="${radios[$opt]}")
     unset radios["$opt"]
-    enregistre && menu
 done
+enregistre
 }
 function desarchive {
 PS3='Quel est le numéro de la radio à désarchiver ? '
 select opt in "${!archives[@]}"
 do
-    radios+=(["$opt"]="{$archives[$opt]}")
-    unset archives["$opt"]
-    enregistre && menu
+#    case "$opt" in
+#	"Menu")
+#	    menu ;;
+#	*)
+	    radios+=(["$opt"]="{$archives[$opt]}")
+	    unset archives["$opt"] 
+	    enregistre #;;
+#    esac
 done
 }
 function menu {
@@ -86,4 +92,25 @@ do
     esac
 done
 }
-menu
+if [[ -n "$1" ]] ; then
+    case "$1" in
+        "lire")
+	    lis ;;
+        "ajouter")
+	    ajoute ;;
+	"enlever")
+	    enleve ;;
+        "archiver")
+	    archive ;;
+	"desarchiver")
+	    desarchive ;;
+	"help")
+	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, help"
+            exit 0 ;;
+        *)
+	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, help"
+            exit 0 ;;
+    esac
+else
+    menu
+fi
