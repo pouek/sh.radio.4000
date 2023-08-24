@@ -12,7 +12,7 @@ chmod u+x radio.sh
 ```
 
 ### Utilisation
-L'exécuter directement avec :
+#### L'exécuter directement avec :
 - Si on est déjà dans le dossier
 ```
 ./radio.sh
@@ -21,14 +21,14 @@ L'exécuter directement avec :
 ```
 /chemin/complet/vers/radio.sh
 ```
-Créer un raccourcis clavier de son choix, qui fera lancer "bash -c /chemin/complet/radio.sh" à son terminal.
+#### Créer un raccourcis clavier de son choix, qui fera lancer "bash -c /chemin/complet/radio.sh" à son terminal.
 Exemples :
 ```
 gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
 
 ```
 
-Raccourcis clavier mplayer (pendant la lecture, donc) :
+#### Raccourcis clavier mplayer (pendant la lecture, donc) :
 - Augmenter le volume : "0"
 - Diminuer le volume : "9"
 - Couper le son : "M"
