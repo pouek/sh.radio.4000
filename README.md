@@ -27,8 +27,10 @@ chmod u+x radio.sh
 ```
 #### Lancement par raccourcis clavier 
 
-Il fera lancer "bash -c /chemin/complet/radio.sh" à son terminal.
-
+Faire lancer à son terminal la commande : 
+```
+bash -c /chemin/complet/radio.sh
+```
 Exemples :
 ```
 gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
