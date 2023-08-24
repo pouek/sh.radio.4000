@@ -40,8 +40,6 @@ Sélection d'une radio à l'aide du numéro correspondant puis touche Entrée.
 
 Arrêt du flux et retour à l'acceuil avec la touche "Q". 
 
-Pour refaire apparaître la liste des radios, taper Entrée.
-
 #### Raccourcis clavier mpv (pendant la lecture, donc) :
 - Augmenter le volume : "0"
 - Diminuer le volume : "9"
