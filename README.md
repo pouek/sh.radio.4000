@@ -5,8 +5,8 @@ Lecteur de radios internet en langage bash avec mes radios favorites.
 
 Nécessite le lecteur mpv. 
 Choisir parmi :
-``` sudo apt install mpv ```
-``` brew install mpv ```
+- ``` sudo apt install mpv ```
+- ``` brew install mpv ```
 
 ### Installation 
 - Télécharger un zip depuis les [Releases](https://github.com/pouek/sh.radio.4000/releases) avec _Clic-Droit_ > _Enregistrer sous_ sur le lien.
