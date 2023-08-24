@@ -1,3 +1,7 @@
+# Dictionnaires (tableaux associatifs) contenant les radios en cours, et plus tard les radios archivées et masquées
+# Respectez la structure pour éviter les bugs, si édition manuelle
+# Édition par le script principal à venir..
+
 declare -A radios=( \
 [FIP]="http://icecast.radiofrance.fr/fip-hifi.aac" \
 [FIP_Jazz]="http://icecast.radiofrance.fr/fipjazz-hifi.aac" \
@@ -76,3 +80,7 @@ declare -A radios=( \
 [Seven_Inch_Soul]="https://somafm.com/7soul.pls" \
 [Ambient_Sleeping_Pill]="https://radio.stereoscenic.com/asp-s" \
 ) 
+
+declare -A archives=( \
+[AAZO]="http://77.67.46.74:8000/aazoradio-hiphop.mp3" \
+)
