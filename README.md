@@ -9,7 +9,7 @@ sudo apt install mpv
 ```
 
 ### Installation 
-- Télécharger les fichier radio.sh et radios.txt
+- Télécharger les fichier radio.sh et liste-radios.txt
 - Rendre le script exécutable avec
 ```
 chmod u+x radio.sh 
@@ -50,11 +50,10 @@ Pas de retour au Menu : "Ctrl + C", et relancer le script... en cours..
 - Couper le son : "M"
 - Quitter : "Q"
 
-### À faire
-- retour au menu depuis la lecture
-- finaliser la fonction d'ajout / suppression de radio
-- finaliser la fonction d'archivage / désarchivage de radio
+### À faire ?
+- ajouter une option de retour au menu depuis les sous-menus.
 - ajouter d'autres exemples de raccourcis clavier selon les différents terminaux et leurs syntaxes.
+- documenter comment on ajoute/enleve/archive/désarchive une radio, mais ça me paraît intuitif.
 
 ### Rêve
 Rediriger la sortie de mpv dans lolcat..
