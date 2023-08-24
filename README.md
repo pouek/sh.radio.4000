@@ -2,6 +2,7 @@
 Lecteur de webradios en bash avec mes radios favorites.
 
 ### Prérequis
+
 Nécessite le lecteur mpv.
 ```
 sudo apt install mpv
@@ -25,12 +26,14 @@ chmod u+x radio.sh
 /chemin/complet/vers/radio.sh
 ```
 #### Menu "lire" 
+
 Sélection d'une radio à l'aide du numéro correspondant puis touche Entrée.
 Arrêt du flux et retour à l'acceuil avec la touche "Q". 
 Pour refaire apparaître la liste des radios, taper Entrée.
 Pas de retour au Menu : "Ctrl + C", et relancer le script... en cours..
 
 #### Lancement par raccourcis clavier 
+
 Il fera lancer "bash -c /chemin/complet/radio.sh" à son terminal.
 
 Exemples :
