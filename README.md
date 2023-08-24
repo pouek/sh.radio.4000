@@ -1,7 +1,10 @@
 # sh.radio.4000
 Lecteur de webradios en bash avec mes radios favorites.
-Nécessite le lecteur mplayer.
+
+Nécessite le lecteur mpv.
+
 Sélection d'un flux à l'aide du numéro correspondant puis touche Entrée.
+
 Arrêt du flux et retour à l'acceuil avec le raccouris Ctrl + C. Ensuite pour refaire apparaître la liste des radios, taper Entrée.
 
 ### Installation 
