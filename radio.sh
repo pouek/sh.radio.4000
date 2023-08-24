@@ -104,11 +104,11 @@ if [[ -n "$1" ]] ; then
 	    archive ;;
 	"desarchiver")
 	    desarchive ;;
-	"help")
-	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, help"
+	"aide")
+	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, aide"
             exit 0 ;;
         *)
-	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, help"
+	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, aide"
             exit 0 ;;
     esac
 else
