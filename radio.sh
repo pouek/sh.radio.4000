@@ -2,8 +2,8 @@
 #!/bin/bash
 # Lecteur et gestionnaire de webradio en langage shell
 
-# Sélection du lecteur. "mp" pour mpv ou "mpl" pour mplayer
-lecteur="mpl"
+# Sélection du lecteur. "mpv" pour mpv ou "mpl" pour mplayer
+lecteur="mpv"
 # Fichier contenant la liste des couples nom + flux de chaque radio
 # Une partie "radios" (actives) et une "archives"
 liste=./liste-radios.txt
@@ -36,9 +36,10 @@ function enregistre {
 }
 # Fonction qui demande la radio a lire et la lis
 function lis {
-# Fonctiond qui lisent le flux
-function mpl { echo -e "\033]2;$opt\007"; mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2|lolcat }
-function mp { echo -e "\033]2;$opt\007" ; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null | grep -v "File tags:" ; } ; }
+# Fonctions qui lisent le flux
+function mpo { echo -e "\033]2;$opt\007"; mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2 ; } #|lolcat : }
+function mp { echo -e "\033]2;$opt\007" ; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null | grep -v "File tags:" ; } #|lolcat;}
+# Choix et lecture de flux
 PS3='Quel est le numéro de la radio à lire ? 
 0 pour retourner au menu maintenant, Q ensuite
 en lecture : 9-0 volume, p pause, m silence
@@ -53,11 +54,11 @@ do
             case $lecteur in
 	        "mpl")
                    if [[ "$flux" ==  *".pls" || "$flux" == *".m3u" ]] ; then
-	               mpl "-playlist" "$flux"
+	               mpo "-playlist" "$flux"
                    else
-	               mpl "$flux"
+	               mpo "$flux"
                    fi ;;
-                "mp")
+                "mpv")
 		    mp "$flux" ;;
                 *) echo "Erreur : lecteur non existant" ; break ;;
 	    esac
