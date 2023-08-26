@@ -16,7 +16,7 @@ sudo apt install mpv
 ```
 dnf install packagename
 ```
-- MacOS avec homebrew :
+- MacOS avec [homebrew](https://brew.sh/) :
 ```
 brew install mpv
 ```
