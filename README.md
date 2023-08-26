@@ -26,11 +26,8 @@ brew install mpv
 - [Cliquer ici pour télécharger le zip](https://github.com/pouek/sh.radio.4000/archive/refs/heads/main.zip).
 - Extraire les fichiers du zip avec _Clic-Droit_ > _Extraire/décompresser_ sur l'archive.
 - Les fichiers _radio.sh_ et _liste-radios.txt_ doivent rester dans le même dossier.
-- Clic-droit dans ce dossier > Ouvrir un terminal (ici, donc)
-- Rendre le script _exécutable_ avec
-```
-chmod u+x radio.sh 
-```
+- Clic-droit sur le fichier _radio.sh_, puis cocher la case _Exécuter_.  
+   
 ### En ligne de commande
 #### Avec Termux
 Pour rendre le script _exécutable_ il faut le laisser dans le "home" de Termux.
@@ -56,8 +53,9 @@ Les fonctions _lecture_, _ajout_, _retrait_, _archivage_, _désarchivage_, et _d
 ### Lancement par raccourcis clavier 
 
 Avec l'outil de raccourcis clavier de son système (GNU/Linux), faire lancer la commande suivante à son terminal : 
+__Adapter le chemin à votre situation__
 ```
-bash -c /chemin/complet/radio.sh
+bash -c /chemin/complet/vers/radio.sh
 ```
 Exemples :
 ```
