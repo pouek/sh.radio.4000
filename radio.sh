@@ -1,6 +1,6 @@
 ##!/data/data/com.termux/files/usr/bin/bash
 #!/bin/bash
-# Lecteur et gestionnaire de webradio en la'gage shell
+# Lecteur et gestionnaire de webradio en langage shell
 
 # Sélection du lecteur. "mp" pour mpv ou "mpl" pour mplayer
 lecteur=mpl
