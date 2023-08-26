@@ -22,7 +22,7 @@ chmod u+x radio.sh
 ```
 
 ## Avec Termux
-Pour rendre le script il faut le laisser dans le "home" de Termux.
+Pour rendre le script _exécutable_ il faut le laisser dans le "home" de Termux.
 - ``` git clone https://www.github.com/pouek/sh.radio.4000 ```
 - ``` cd sh.radio.4000/ ```
 - ``` chmod u+x radio.sh ```
