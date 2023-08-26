@@ -3,18 +3,20 @@ Lecteur de radios internet en langage shell avec mes radios favorites.
 
 ## Prérequis
 
-Installer le lecteur mpv. 
+Installer le lecteur [mpv](https://mpv.io/). 
+Depuis votre gestionnaire de logiciels, ou par le terminal :
 - Debian, Mint, Ubuntu, ... :
 ```
 sudo apt install mpv
 ```
 - Fedora et dérivés :
-``` dnf install packagename ```
+```
+dnf install packagename
+```
 - MacOS avec homebrew :
 ```
 brew install mpv
 ```
-- etc.
 
 ## Installation 
 ### Graphique (simple)
