@@ -21,8 +21,8 @@ brew install mpv
 ## Installation 
 ### Graphique (simple)
 - [Cliquer ici pour télécharger le zip](https://github.com/pouek/sh.radio.4000/archive/refs/heads/main.zip).
-- Extraire les fichiers [radio.sh] et [liste-radios.txt] avec _Clic-Droit_ > _Extraire/décompresser_ sur l'archive.
-- Conserver ces 2 fichiers dans le même dossier.
+- Extraire les fichiers du zip avec _Clic-Droit_ > _Extraire/décompresser_ sur l'archive.
+- Les fichiers _radio.sh_ et _liste-radios.txt_ doivent rester dans le même dossier.
 - Clic-droit dans ce dossier > Ouvrir un terminal (ici, donc)
 - Rendre le script _exécutable_ avec
 ```
@@ -39,7 +39,7 @@ Pour rendre le script _exécutable_ il faut le laisser dans le "home" de Termux.
 
 ## Utilisation
 ### Menu
-Les fonctions Lecture, Ajout, Retrait, Archivage, Désarchivage sont accessibles depuis le menu d'accueil.
+Les fonctions Lecture, Ajout, Retrait, Archivage, Désarchivage, et Détails sont accessibles depuis le menu d'accueil.
 
 ### Lancement depuis le terminal
 - Si on est déjà dans le dossier
@@ -78,7 +78,6 @@ Raccourcis clavier :
  - M : Couper le son
 
 ## À faire ?
-- ajouter une option de retour au menu depuis les sous-menus.
 - ajouter d'autres exemples de raccourcis clavier selon les différents terminaux et leurs syntaxes.
 - documenter comment on ajoute/enleve/archive/désarchive une radio, mais ça me paraît intuitif.
 
