@@ -8,7 +8,7 @@ Installer le lecteur [mpv](https://mpv.io/).
 (Ou mplayer et éventuellement lolcat, voir [code](https://github.com/pouek/sh.radio.4000/blob/main/radio.sh)) 
 
 Installable sous GNU/Linux, depuis votre gestionnaire de logiciels, ou par le terminal :
-- Debian, Mint, Ubuntu, ... :
+- Debian, Mint, Ubuntu, Termux, ... :
 ```
 sudo apt install mpv
 ```
