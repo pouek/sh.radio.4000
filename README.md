@@ -3,8 +3,11 @@ Lecteur de radios internet en langage shell avec mes radios favorites.
 
 ## Prérequis
 
-Installer le lecteur [mpv](https://mpv.io/). (ou mplayer et éventuellement lolcat, voir [code](https://github.com/pouek/sh.radio.4000/blob/main/radio.sh)) 
-Depuis votre gestionnaire de logiciels, ou par le terminal :
+Installer le lecteur [mpv](https://mpv.io/).
+
+(Ou mplayer et éventuellement lolcat, voir [code](https://github.com/pouek/sh.radio.4000/blob/main/radio.sh)) 
+
+Installable sous GNU/Linux, depuis votre gestionnaire de logiciels, ou par le terminal :
 - Debian, Mint, Ubuntu, ... :
 ```
 sudo apt install mpv
