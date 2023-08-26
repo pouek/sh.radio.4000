@@ -22,7 +22,7 @@ brew install mpv
 ```
 
 ## Installation 
-### Graphique (maximum de souris, simple)
+### Graphique (à la souris)
 - [Cliquer ici pour télécharger le zip](https://github.com/pouek/sh.radio.4000/archive/refs/heads/main.zip).
 - Extraire les fichiers du zip avec _Clic-Droit_ > _Extraire/décompresser_ sur l'archive.
 - Les fichiers _radio.sh_ et _liste-radios.txt_ doivent rester dans le même dossier.
@@ -53,15 +53,15 @@ Les fonctions _lecture_, _ajout_, _retrait_, _archivage_, _désarchivage_, et _d
 ### Lancement par raccourcis clavier 
 
 Avec l'outil de raccourcis clavier de son système (GNU/Linux), faire lancer la commande suivante à son terminal : 
-__Adapter le chemin à votre situation__
+__Adapter le chemin à votre situation !__
 ```
 bash -c /chemin/complet/vers/radio.sh
 ```
 Exemples :
 ```
 gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
-
 ```
+
 ### Passage d'un choix de menu en paramètre lors du lancement du script
 _Pour sauter l'étape "Menu"_
 
