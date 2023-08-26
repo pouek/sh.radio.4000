@@ -146,24 +146,24 @@ menu
 # Fonction de menu principal
 function menu {
 clear
-actions=( "Lire" "Ajouter" "Enlever" "Archiver" "Désarchiver" "Détails" "Quitter")
+actions=( "lire" "ajouter" "enlever" "archiver" "désarchiver" "détails" "quitter")
 PS3='Que veux-tu faire ? '
 select act in "${actions[@]}"
 do
     case "$act" in
-        "Lire")
+        "lire")
 	    lis ;;
-        "Ajouter")
+        "ajouter")
 	    ajoute ;;
-	"Enlever")
+	"enlever")
 	    enleve ;;
-        "Archiver")
+        "archiver")
 	    archive ;;
-	"Désarchiver")
+	"désarchiver")
 	    desarchive ;;
-	"Détails")
+	"détails")
             informe ;;
-        "Quitter")
+        "quitter")
             exit 0 ;;
         *) echo "Qu'entends-tu par $REPLY ?" ;;
     esac
@@ -182,13 +182,13 @@ if [[ -n "$1" ]] ; then
 	    archive ;;
 	"desarchiver")
 	    desarchive ;;
-        "Détails")
+        "détails")
             informe ;;
 	"aide")
-	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, aide"
+	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, détails, aide"
             exit 0 ;;
         *)
-	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, aide"
+	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, détails, aide"
             exit 0 ;;
     esac
 else
