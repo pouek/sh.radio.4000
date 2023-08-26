@@ -20,7 +20,7 @@ brew install mpv
 
 ## Installation 
 ### Graphique (simple)
-- Télécharger [ce zip](https://github.com/pouek/sh.radio.4000/archive/refs/heads/main.zip) en faisant _Clic-Droit_ > _Enregistrer sous_ sur le lien.
+- [Cliquer ici pour télécharger le zip](https://github.com/pouek/sh.radio.4000/archive/refs/heads/main.zip).
 - Extraire les fichiers [radio.sh] et [liste-radios.txt] avec _Clic-Droit_ > _Extraire/décompresser_ sur l'archive.
 - Conserver ces 2 fichiers dans le même dossier.
 - Clic-droit dans ce dossier > Ouvrir un terminal (ici, donc)
