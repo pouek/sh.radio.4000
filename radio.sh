@@ -3,7 +3,7 @@
 # Lecteur et gestionnaire de webradio en langage shell
 
 # Sélection du lecteur. "mp" pour mpv ou "mpl" pour mplayer
-lecteur=mpl
+lecteur="mpl"
 # Fichier contenant la liste des couples nom + flux de chaque radio
 # Une partie "radios" (actives) et une "archives"
 liste=./liste-radios.txt
@@ -38,7 +38,7 @@ function enregistre {
 function lis {
 # Fonctiond qui lisent le flux
 function mpl { echo -e "\033]2;$opt\007"; mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2|lolcat }
-function mp { echo -e "\033]2;$opt\007" ; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null | grep -v "File tags:" ; } #| lolcat ; }
+function mp { echo -e "\033]2;$opt\007" ; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null | grep -v "File tags:" ; } ; }
 PS3='Quel est le numéro de la radio à lire ? 
 0 pour retourner au menu maintenant, Q ensuite
 en lecture : 9-0 volume, p pause, m silence
