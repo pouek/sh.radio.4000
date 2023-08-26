@@ -3,7 +3,7 @@
 # Lecteur et gestionnaire de webradio en la'gage shell
 
 # Sélection du lecteur. "mp" pour mpv ou "mpl" pour mplayer
-lecteur=mp
+lecteur=mpl
 # Fichier contenant la liste des couples nom + flux de chaque radio
 # Une partie "radios" (actives) et une "archives"
 liste=./liste-radios.txt
@@ -72,7 +72,9 @@ function ajoute {
     read -p "Quel est le nom de la radio ?" nom
     read -p "Quel est l'adresse du flux ? " flux
     echo "Test du flux, Ctrl+C pour revenir" ; sleep 3 ; mp "$flux"
-fi
+    oui_non "Le nom est correct et le flux audible ? " && radios+=(["$nom"]="$flux") || echo "Pas de soucis, on recommence !" ; break
+    enregistre
+}
 # Fonction de retrait d'une station
 function enleve {
 PS3="Quel est le numéro de la radio à enlever ? 
@@ -87,7 +89,7 @@ do
         unset radios["$opt"] ;;
     esac
 done
-enregistre && menu
+enregistre
 }
 # Fonction d'archivage d'une station
 function archive {
@@ -104,7 +106,7 @@ do
             unset radios["$opt"] ;;
     esac
 done
-enregistre && menu
+enregistre
 }
 # Fonction de désarchivage d'une station
 function desarchive {
