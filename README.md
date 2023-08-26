@@ -55,7 +55,7 @@ Les fonctions Lecture, Ajout, Retrait, Archivage, Désarchivage, et Détails son
 ```
 ### Lancement par raccourcis clavier 
 
-Faire lancer à son terminal la commande : 
+Avec l'outil de racfourcis claviers de son système (GNU/Linux), faire lancer la commande suivante à son terminal : 
 ```
 bash -c /chemin/complet/radio.sh
 ```
