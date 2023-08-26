@@ -26,7 +26,7 @@ brew install mpv
 - [Cliquer ici pour télécharger le zip](https://github.com/pouek/sh.radio.4000/archive/refs/heads/main.zip).
 - Extraire les fichiers du zip avec _Clic-Droit_ > _Extraire/décompresser_ sur l'archive.
 - Les fichiers _radio.sh_ et _liste-radios.txt_ doivent rester dans le même dossier.
-- Clic-droit sur le fichier _radio.sh_, puis cocher la case _Exécuter_.  
+- Clic-droit sur le fichier _radio.sh_, puis chercher et cocher la case _Exécuter_.  
    
 ### En ligne de commande
 #### Avec Termux
