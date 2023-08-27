@@ -55,7 +55,7 @@ Les fonctions _lecture_, _ajout_, _retrait_, _archivage_, _désarchivage_, et _d
 Avec l'outil de raccourcis clavier de son système (GNU/Linux), faire lancer la commande suivante à son terminal : 
 __Adapter le chemin à votre situation !__
 ```
-bash -c "~/chemin/vers/sh.radio.4000 && ./radio.sh lecture"
+bash -c "~/chemin/vers/sh.radio.4000 && ./radio.sh lire"
 ```
 Exemples :
 ```
