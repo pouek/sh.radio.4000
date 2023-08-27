@@ -24,9 +24,9 @@ brew install mpv
 ## Installation 
 ### Graphique (à la souris)
 - [Cliquer ici pour télécharger le zip](https://github.com/pouek/sh.radio.4000/archive/refs/heads/main.zip).
-- Extraire les fichiers du zip avec _Clic-Droit_ > _Extraire/décompresser_ sur l'archive.
+- Extraire les fichiers avec _Clic-Droit_ sur le _fichier .zip_ > _Extraire ou décompresser_.
 - Les fichiers _radio.sh_ et _liste-radios.txt_ doivent rester dans le même dossier.
-- Clic-droit sur le fichier _radio.sh_, puis chercher et cocher la case _Exécuter_.  
+- Clic-droit sur le fichier _radio.sh_ > _Propriétés_, puis chercher et cocher la case _Exécuter_.  
    
 ### En ligne de commande
 #### Avec Termux
@@ -55,7 +55,7 @@ Les fonctions _lecture_, _ajout_, _retrait_, _archivage_, _désarchivage_, et _d
 Avec l'outil de raccourcis clavier de son système (GNU/Linux), faire lancer la commande suivante à son terminal : 
 __Adapter le chemin à votre situation !__
 ```
-bash -c "~/chemin/vers/sh.radio.4000 && ./radio.sh lire"
+bash -c "~/chemin/vers/sh.radio.4000 && ./radio.sh lecture"
 ```
 Exemples :
 ```
@@ -66,20 +66,20 @@ gnome-terminal --geometry=117x30 -t "Radio 4000" -- bash -c "~/chemin/vers/sh.ra
 _Pour sauter l'étape "Menu"_
 
 Exemples : 
-- ``` ./radio.sh lecture ``` ira directement au sous-menu de choix d'une station à lire
+- ``` ./radio.sh lire ``` ira directement au sous-menu de choix d'une station à lire
 - ``` ./radio.sh aide ``` pour la liste des options
 
 ### Lecture d'une radio
 Sélection d'une radio à l'aide du numéro correspondant puis touche Entrée.
 
-Raccourcis clavier :
+Raccourcis clavier mpv :
  - Q : Arrêt du flux et retour à l'acceuil
  - 0 : Augmenter le volume
  - 9 : Diminuer le volume
  - M : Couper le son
 
 ## À faire ?
-- ajouter d'autres exemples de raccourcis clavier selon les différents terminaux et leurs syntaxes.
+- ajouter d'autres exemples de raccourcis clavier de lancement selon les différents terminaux et leurs syntaxes.
 - documenter comment on ajoute/enleve/archive/désarchive une radio, mais ça me paraît intuitif.
 
 ## Rêve

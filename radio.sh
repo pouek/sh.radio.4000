@@ -2,15 +2,43 @@
 #!/bin/bash
 # Lecteur et gestionnaire de webradio en langage shell
 
-# Sélection du lecteur. "mpv" pour mpv ou "mpl" pour mplayer
+# Sélection du lecteur. "mpv" pour mpv ou "mplayer" pour mplayer
 lecteur="mpv"
-# Fichier contenant la liste des couples nom + flux de chaque radio
-# Une partie "radios" (actives) et une "archives"
-liste=./liste-radios.txt
-source "$liste"
-# Fonction qui met à jour cette liste en fonction des modifications demandées
-function ecris { cp "$liste" o."$liste"; declare -p radios > "$liste"; declare -p archives >> "$liste" ;}
-# Fonction pour demander confirmation 
+# Types de fichiers contenant la liste des couples nom + flux de chaque radio
+# Un fichier "favoris" (actives) et un "archives", avec des suffixes .txt pour être éditables à la main.
+declare -a types=("favoris" "archives")
+
+for type in "${types[@]}"; do
+    echo "$type"
+    declare -A "$type"
+    declare -n temp="$type"
+    while IFS=$'\t' read -r -a tableau
+    do
+        (("${#tableau[*]}" <= 2)) || continue
+        temp+=(["${tableau[@]:0:1}"]="${tableau[@]:1:1}")
+    done < "$type".txt
+done
+
+#source ./liste_radios.txt
+# Fonction de mise à jour de cette liste à chaque modification
+function ecris {
+	ordonner
+	for type in "${types[@]}" ; do
+		rm "$type".txt
+		declare -n temp="$type"
+		declare -n temp_ord="$type"_ord
+		for cle in "${temp_ord[@]}"; do
+			echo "$cle	${temp[${cle}]}" >> "$type".txt
+		done
+	done
+}
+# Fonction de tri des noms de favoris, résultats sauvés dans des tableaux indexés en *_ord 
+function ordonner {
+	IFS=$'\n' favoris_ord=($(sort <<<"${!favoris[@]}")) ; unset IFS
+	IFS=$'\n' archives_ord=($(sort <<<"${!archives[@]}")) ; unset IFS
+}
+ordonner
+# Fonction d'intéraction : confirmation/infirmation
 function oui_non {
     while true; do
         read -p "$* [o/n]: " yn
@@ -20,154 +48,177 @@ function oui_non {
         esac
     done
 }
-# Fonction qui fait vérifier les modifications de stations
+# Fonction qui fait vérifier les modifications de favoris
 # avant de les enregistrer dans le fichier liste
 function enregistre {
-    echo "Liste des radios actives : "
-    for clef in "${!radios[@]}";do
-        echo "$clef : ${radios[$clef]}"
+	ordonner
+    echo "### Liste des radios actives : ###"
+    for clef in "${favoris_ord[@]}";do
+        echo "$clef : ${favoris[$clef]}"
     done
-    echo "Liste des radios archivées : "
-    for clef in "${!archives[@]}";do
+    echo "### Liste des radios archivées : ###"
+    for clef in "${archives_ord[@]}";do
         echo "$clef : ${archives[$clef]}"
     done
     oui_non "Enregistrer ?" && ecris
     menu
 }
-# Fonction qui demande la radio a lire et la lis
-function lis {
-# Fonctions qui lisent le flux
+# Fonctions qui lisent les flux
 function mpo { echo -e "\033]2;$opt\007"; mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2 ; } #|lolcat : }
 function mp { echo -e "\033]2;$opt\007" ; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null | grep -v "File tags:" ; } #|lolcat;}
-# Choix et lecture de flux
-PS3='Quel est le numéro de la radio à lire ? 
+# Fonction propose les stations à lire, et les lis
+function lis {
+	PS3='Quel est le numéro de la radio à lire ? 
 0 pour retourner au menu maintenant, Q ensuite
 en lecture : 9-0 volume, p pause, m silence
 '
-select opt in "${!radios[@]}"
-do
-    case "$opt" in
-        "")
-           menu ;;
-        *)
-            flux="${radios[$opt]}"
-            case $lecteur in
-	        "mpl")
-                   if [[ "$flux" ==  *".pls" || "$flux" == *".m3u" ]] ; then
-	               mpo "-playlist" "$flux"
-                   else
-	               mpo "$flux"
-                   fi ;;
-                "mpv")
-		    mp "$flux" ;;
-                *) echo "Erreur : lecteur non existant" ; break ;;
-	    esac
-     esac
-done
-menu
+	select opt in "${favoris_ord[@]}"
+	do
+		case "$opt" in
+			"")
+				menu ;;
+			*)
+				flux="${favoris[$opt]}"
+				case $lecteur in
+					"mplayer")
+						if [[ "$flux" ==  *".pls" || "$flux" == *".m3u" ]] ; then
+							mpo "-playlist" "$flux"
+						else
+							mpo "$flux"
+						fi ;;			
+					"mpv") mp "$flux" ;;
+					*) echo "Erreur : lecteur non existant" ; exit 0;;
+				esac ;;
+		esac
+	done
+	menu
 }
-# Fonction d'ajout de station à la liste
-# To-do : auto-corriger le nom
+# Fonction d'ajout de favori à la liste
 function ajoute {
-    echo "(Caractères autorisés : lettres, chiffres, '-',' _')"
     read -p "Quel est le nom de la radio ?" nom
     read -p "Quel est l'adresse du flux ? " flux
-    echo "Test du flux, Ctrl+C pour revenir" ; sleep 3 ; mp "$flux"
-    oui_non "Le nom est correct et le flux audible ? " && radios+=(["$nom"]="$flux") || echo "Pas de soucis, on recommence !" ; break
-    enregistre
+    echo "Test du flux, Ctrl+C pour revenir" ; sleep 1 ; 
+    mp "$flux" ; 
+    if $(oui_non "Le nom '$nom' est correct et le flux audible ? "); then
+		favoris+=(["$nom"]="$flux") ; enregistre
+	else echo "Pas de soucis, on recommence !" && ajoute
+	fi
 }
 # Fonction de retrait d'une station
 function enleve {
-PS3="Quel est le numéro de la radio à enlever ? 
+	PS3="Enlever un favori ou une archive ?" 
+	select type in "favori" "archive"
+	do
+		case "$type" in
+			"")
+				menu;;
+			"favori")
+				PS3="Quel est le numéro de la radio à enlever ? 
 0 pour retourner au menu principal
-"
-select opt in "${!radios[@]}"
-do
-    case "$opt" in
-        "")
-            menu ;;
-        *)
-        unset radios["$opt"] ;;
-    esac
-done
-enregistre
+"	
+				select opt in "${favoris_ord[@]}"
+				do
+					case "$opt" in
+						"")
+							menu ;;
+						*)
+							unset 'favoris[$opt]'
+							enregistre ;;
+					esac
+				done;;
+			"archive")
+				PS3="Quel est le numéro de la radio à enlever ? 
+0 pour retourner au menu principal
+"	
+				select opt in "${archives_ord[@]}"
+				do
+					case "$opt" in
+						"")
+							menu ;;
+						*)
+							unset archives["$opt"] 
+							enregistre ;;
+					esac
+				done;;
+		esac
+	done
 }
-# Fonction d'archivage d'une station
+# Fonction d'archivage d'un favori
 function archive {
-PS3='Quel est le numéro de la radio à archiver ? 
+	PS3='Quel est le numéro de la radio à archiver ? 
 0 pour retourner au menu principal
 '
-select opt in "${!radios[@]}"
-do
-    case "$opt" in
-        "")
-            menu ;;
-        *)
-            archives+=(["$opt"]="${radios[$opt]}")
-            unset radios["$opt"] ;;
-    esac
-done
-enregistre
+	select opt in "${favoris_ord[@]}"
+		do
+			case "$opt" in
+				"")
+					menu ;;
+				*)
+					archives+=(["$opt"]="${favoris[$opt]}")
+					unset favoris["$opt"] 
+					enregistre ;;
+			esac
+		done
 }
 # Fonction de désarchivage d'une station
 function desarchive {
-PS3='Quel est le numéro de la radio à désarchiver ? 
+	PS3='Quel est le numéro de la radio à désarchiver ? 
 0 pour retourner au menu
 '
-select opt in "${!archives[@]}"
-do
-    case "$opt" in
-	"")
-	    menu ;;
-	*)
-	    radios+=(["$opt"]="{$archives[$opt]}")
-	    unset archives["$opt"] 
-	    enregistre #;;
-    esac
-done
-menu
+	select opt in "${archives_ord[@]}"
+	do
+		case "$opt" in
+			"")
+				menu ;;
+			*)
+				favoris+=(["$opt"]="${archives[$opt]}")
+				unset archives["$opt"] 
+				enregistre ;;
+		esac
+	done
+	menu
 }
-# Fonction donnant les détails d'une station (flux)
+# Fonction donnant les détails d'un favori (flux)
 function informe {
 PS3='Quelle est la radio dont tu veux les détails ? 
 0 pour retourner au menu
 '
-select opt in "${!radios[@]}"
+select opt in "${favoris_ord[@]}"
 do
     case "$opt" in
        "")
            menu ;;
        *)
-          echo "Nom : $opt, flux : ${radios[$opt]}" ;;
+          echo "Nom : $opt, flux : ${favoris[$opt]}" ;;
     esac
 done
 menu
 }
 # Fonction de menu principal
 function menu {
-clear
-actions=( "lire" "ajouter" "enlever" "archiver" "désarchiver" "détails" "quitter")
-PS3='Que veux-tu faire ? '
-select act in "${actions[@]}"
-do
-    case "$act" in
-        "lire")
-	    lis ;;
-        "ajouter")
-	    ajoute ;;
-	"enlever")
-	    enleve ;;
-        "archiver")
-	    archive ;;
-	"désarchiver")
-	    desarchive ;;
-	"détails")
-            informe ;;
-        "quitter")
-            exit 0 ;;
-        *) echo "Qu'entends-tu par $REPLY ?" ;;
-    esac
-done
+	clear
+	actions=( "lire" "ajouter" "enlever" "archiver" "désarchiver" "détails" "quitter")
+	PS3='Que veux-tu faire ? '
+	select act in "${actions[@]}"
+	do
+		case "$act" in
+			"lire")
+			lis ;;
+			"ajouter")
+			ajoute ;;
+		"enlever")
+			enleve ;;
+			"archiver")
+			archive ;;
+		"désarchiver")
+			desarchive ;;
+		"détails")
+				informe ;;
+			"quitter")
+				exit 0 ;;
+			*) echo "Qu'entends-tu par $REPLY ?" ;;
+		esac
+	done
 }
 # Lancement du menu, avec paramètre
 if [[ -n "$1" ]] ; then
@@ -192,6 +243,6 @@ if [[ -n "$1" ]] ; then
             exit 0 ;;
     esac
 else
-# Lancement du menu, sans paramètre
+	# Lancement du menu, sans paramètre
     menu
 fi
