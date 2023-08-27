@@ -55,11 +55,11 @@ Les fonctions _lecture_, _ajout_, _retrait_, _archivage_, _désarchivage_, et _d
 Avec l'outil de raccourcis clavier de son système (GNU/Linux), faire lancer la commande suivante à son terminal : 
 __Adapter le chemin à votre situation !__
 ```
-bash -c /chemin/complet/vers/radio.sh
+bash -c "~/chemin/vers/sh.radio.4000 && ./radio.sh lire"
 ```
 Exemples :
 ```
-gnome-terminal --geometry=117x27 -t "Radio 4000" -- bash -c ~/chemin/vers/radio.sh
+gnome-terminal --geometry=117x30 -t "Radio 4000" -- bash -c "~/chemin/vers/sh.radio.4000 && ./radio.sh lire"
 ```
 
 ### Passage d'un choix de menu en paramètre lors du lancement du script
