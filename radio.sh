@@ -40,10 +40,11 @@ ordonner
 # Fonction d'intéraction : confirmation/infirmation
 function oui_non {
     while true; do
-        read -p "$* [o/n]: " yn
+        read -p "$* [O/n]: " yn
         case $yn in
             [Oo]*) return 0  ;;
             [Nn]*) echo "Abandonné" ; return  1 ;;
+            *) return 0  ;;
         esac
     done
 }
