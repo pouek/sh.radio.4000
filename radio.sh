@@ -9,7 +9,6 @@ lecteur="mpv"
 declare -a types=("favoris" "archives")
 
 for type in "${types[@]}"; do
-    echo "$type"
     declare -A "$type"
     declare -n temp="$type"
     while IFS=$'\t' read -r -a tableau
@@ -52,11 +51,11 @@ function oui_non {
 # avant de les enregistrer dans le fichier liste
 function enregistre {
 	ordonner
-    echo "### Liste des radios actives : ###"
+    echo "	### Liste des radios actives : ###"
     for clef in "${favoris_ord[@]}";do
         echo "$clef : ${favoris[$clef]}"
     done
-    echo "### Liste des radios archivées : ###"
+    echo "	### Liste des radios archivées : ###"
     for clef in "${archives_ord[@]}";do
         echo "$clef : ${archives[$clef]}"
     done
@@ -64,8 +63,8 @@ function enregistre {
     menu
 }
 # Fonctions qui lisent les flux
-function mpo { echo -e "\033]2;$opt\007"; mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2 ; } #|lolcat : }
-function mp { echo -e "\033]2;$opt\007" ; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null | grep -v "File tags:" ; } #|lolcat;}
+function mpo { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2 ; } #|lolcat : }
+function mp { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null | grep -v "File tags:" ; } #|lolcat;}
 # Fonction propose les stations à lire, et les lis
 function lis {
 	PS3='Quel est le numéro de la radio à lire ? 
@@ -78,7 +77,7 @@ en lecture : 9-0 volume, p pause, m silence
 			"")
 				menu ;;
 			*)
-				flux="${favoris[$opt]}"
+				flux="${favoris[${opt}]}"
 				case $lecteur in
 					"mplayer")
 						if [[ "$flux" ==  *".pls" || "$flux" == *".m3u" ]] ; then
@@ -194,10 +193,32 @@ do
 done
 menu
 }
+# Fonction d'édition d'un favori
+function edite {
+	PS3='Quel est le numéro de la radio à éditer ? 
+0 pour retourner au menu principal
+'
+	select opt in "${favoris_ord[@]}"
+		do
+			case "$opt" in
+				"")
+				    menu ;;
+				*)
+				    echo "Flux actuel : ${favoris["$opt"]} "
+    				    read -p "Par quelle adresse lz remplacer ? " flux
+    				    echo "Test du flux, Ctrl+C pour revenir" ; sleep 1 ; 
+                                    mp "$flux" ; 
+                                    if $(oui_non "Le nom '$opt' est correct et le flux audible ? "); then
+		                        favoris["$opt"]="$flux" ; enregistre
+	                            else echo "Pas de soucis, on recommence !" && ajoute
+				    fi ;;
+			esac
+		done
+}
 # Fonction de menu principal
 function menu {
 	clear
-	actions=( "lire" "ajouter" "enlever" "archiver" "désarchiver" "détails" "quitter")
+	actions=( "lire" "ajouter" "enlever" "archiver" "désarchiver" "voir détails" "éditer" "quitter")
 	PS3='Que veux-tu faire ? '
 	select act in "${actions[@]}"
 	do
@@ -212,11 +233,13 @@ function menu {
 			archive ;;
 		"désarchiver")
 			desarchive ;;
-		"détails")
-				informe ;;
-			"quitter")
-				exit 0 ;;
-			*) echo "Qu'entends-tu par $REPLY ?" ;;
+		"éditer")
+			edite ;;
+		"voir détails")
+			informe ;;
+		"quitter")
+			exit 0 ;;
+		*) echo "Qu'entends-tu par $REPLY ?" ;;
 		esac
 	done
 }
@@ -229,17 +252,19 @@ if [[ -n "$1" ]] ; then
 	    ajoute ;;
 	"enlever")
 	    enleve ;;
+	"éditer")
+	    edite ;;
         "archiver")
 	    archive ;;
 	"desarchiver")
 	    desarchive ;;
-        "détails")
+        "voir détails")
             informe ;;
-	"aide")
-	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, détails, aide"
+	"voir aide")
+	    echo "Options : rien, lire, ajouter, enlever, archiver, désarchiver, éditer, voir détails, voir aide"
             exit 0 ;;
         *)
-	    echo "Options : rien, lire, ajouter, enlever, archiver, desarchiver, détails, aide"
+	    echo "Options : rien, lire, ajouter, enlever, archiver, désarchiver, voir détails, voir aide"
             exit 0 ;;
     esac
 else

@@ -64,11 +64,12 @@ gnome-terminal --geometry=117x30 -t "Radio 4000" -- bash -c "~/chemin/vers/sh.ra
 ```
 
 ### Passage d'un choix de menu en paramètre lors du lancement du script
+__Options : "rien" (→ menu), "lire", "ajouter", "enlever", "archiver", "désarchiver", "voir détails", "voir aide".__
 _Pour sauter l'étape "Menu"_
 
 Exemples : 
 - ``` ./radio.sh lire ``` ira directement au sous-menu de choix d'une station à lire
-- ``` ./radio.sh aide ``` pour la liste des options
+- ``` ./radio.sh voir aide ``` pour la liste des options
 
 ### Lecture d'une radio
 Sélection d'une radio à l'aide du numéro correspondant puis touche Entrée.
@@ -80,7 +81,6 @@ Raccourcis clavier mpv :
  - M : Couper le son
 
 ## À faire ?
-- ajouter comment se faire un lanceur avec icône, .desktop sous linux, et par Automator sous macOS.  
 - ajouter d'autres exemples de raccourcis clavier de lancement selon les différents terminaux et leurs syntaxes.
 - documenter comment on ajoute/enleve/archive/désarchive une radio, mais ça me paraît intuitif.
 
