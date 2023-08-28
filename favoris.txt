@@ -4,7 +4,7 @@ Another Planet	http://stream.anotherplanet.fm:2199/tunein/shoutcast.pls
 Balla Radio	http://192.99.35.93:5730
 Campus Toulouse	http://stream.radiotime.com/listen.m3u?streamId=10555650
 Canal Sud	http://91.224.148.160:8000/canalsud-live
-Cause Commune	http://vdl.stream-lat.org:8000/voixdulat mp3
+Cause Commune	http://vdl.stream-lat.org:8000/voixdulat_mp3
 ChillSky-Lofi Hip Hop Radio	http://hyades.shoutca.st:8043/stream
 FIP	http://icecast.radiofrance.fr/fip-hifi.aac
 FIP Electro	http://direct.fipradio.fr/live/fip-webradio8.mp3
@@ -38,18 +38,18 @@ Nova-Vintage	http://nova-vnt.ice.infomaniak.ch/nova-vnt-128.mp3
 NTS-100% Hip Hop	https://stream-mixtape-geo.ntslive.net/mixtape2
 NTS-Slow Focus	https://stream-mixtape-geo.ntslive.net/mixtape7
 Onde Courte	http://stream.ondecourte.fr/radio.ogg
-Phaune Radio	http://stream.phauneradio.com/phaune 256
+Phaune Radio	http://stream.phauneradio.com/phaune_256
 Plum FM	http://plumfm.online.radiobreizh.bzh/live.mp3
 Prun'	http://streaming.prun.net/streamprun.m3u
 Radio Canuts	http://live.francra.org:8000/radiocanut?alea=MjAxOS0wNy0yNCAyMzozODowMw==
 Radio Gumbé	http://149.56.183.178:8548/stream/1/
 Radio Jovem Bissau	http://srv3.ipstm.net:9014
-Radio Klaxon	https://grenoble.indymedia.org/radio klaxon.m3u
+Radio Klaxon	https://grenoble.indymedia.org/radio_klaxon.m3u
 Radio La Locale	http://91.121.134.23:8000/lalocale.mp3
 Radio Larzac	http://stream.radiolarzac.org:8000/radiolarzac
 Radio Libertaire	http://ecoutez.radio-libertaire.org:8080/radiolib.m3u
 Radio Meuh	http://radiomeuh.ice.infomaniak.ch/radiomeuh-128.mp3
-Radio Pikez	http://ecouter.pikez.space:8000/pikez hd
+Radio Pikez	http://ecouter.pikez.space:8000/pikez_hd
 Radio Primitive	http://www.radioprimitive.fr:8000/live.m3u
 Radio Sing Sing	http://stream.sing-sing.org:8000/singsingaac128
 Radio Zinzine	http://91.121.65.189:8000/3?1526206575807.mp3
