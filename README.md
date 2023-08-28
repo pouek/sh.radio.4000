@@ -80,6 +80,7 @@ Raccourcis clavier mpv :
  - M : Couper le son
 
 ## À faire ?
+- ajouter comment se faire un lanceur avec icône, .desktop sous linux, et par Automator sous macOS.  
 - ajouter d'autres exemples de raccourcis clavier de lancement selon les différents terminaux et leurs syntaxes.
 - documenter comment on ajoute/enleve/archive/désarchive une radio, mais ça me paraît intuitif.
 
