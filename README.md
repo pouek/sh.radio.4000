@@ -166,7 +166,7 @@ Examples:
 # Playing a radio
 Select a radio using the corresponding number and then enter key.
 
-Shortcuts keyboard mpv :
+Keyboard shortcuts mpv :
 - Q: Quit the player and return to the main menu
 - 0 : Increase the volume
 - 9: Reduce volume
