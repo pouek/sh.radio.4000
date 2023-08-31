@@ -1,5 +1,7 @@
 # sh.radio.4000
-Lecteur de radios internet en langage shell avec mes radios favorites.
+Lecteur et gestionnaire de radios internet, en langage shell, avec mes radios favorites.
+Webradios player and manager, in shell language, with my favorites.
+English read-me lower.
 
 ## Prérequis
 
@@ -86,3 +88,91 @@ Raccourcis clavier mpv :
 
 ## Rêve
 Pouvoir rediriger la sortie de mpv dans lolcat..
+
+
+# Read me
+Webradios player and manager, in shell language, with my favorites.
+
+# Prerequisites
+Install the player [mpv](https://mpv.io/).
+(Or mplayer and possibly lolcat, see [code](https://github.com/pouek/sh.radio.4000/blob/main/radio.sh))
+
+Installable under GNU/Linux, from your software manager, or by the terminal:
+- Debian, Mint, Ubuntu, Termux, ... :
+"
+sudo apt install mpv
+"
+- Fedora and derivatives:
+"
+dnf install packagename
+"
+- MacOS with [homebrew](https://brew.sh/):
+"
+brew install mpv
+"
+
+# Installation
+## Graphic (with mouse)
+- [Click here to download the zip](https://github.com/pouek/sh.radio.4000/archive/refs/heads/main.zip).
+- Extract files with _Right-Click_ on the _file .zip_ > _Extract or uncompress_.
+- _radio.sh_ and _liste-radios.txt_ files must remain in the same folder.
+- Right click on the file _radio.sh_ > _Properties_, then search and check the box _Execute_.
+
+## Order line
+## With Termux
+To make the script _executable_ you have to leave it in the "home" of Termux.
+- ``` cd ```
+## Common to Termux and other terminals
+- ``` git clone https://www.github.com/pouek/sh.radio.4000 ```
+- ``` cd sh.radio.4000/ ```
+``` chmod u+x radio.sh ```
+
+# Use
+_lecture_ (read), _ajout_ (add), _retrait_ (remove), _archivage_ (archive), _désarchivage_ (unarchive), and _détails_ (details) are available from the menu.
+
+
+## Launch from terminal
+- If we're already in the folder.
+```
+./radio.sh
+```
+- From anywhere
+```
+/chemin/complete/vers/radio.sh
+```
+
+## Launch by keyboard shortcuts
+With the keyboard shortcut tool of your system (GNU/Linux), launch the following command with its terminal:
+
+___Adapt the path to your situation!___
+```
+bash -c "~/path/to/sh.radio.4000 " ./radio.sh lire"
+```
+Examples:
+```
+gnome-terminal --geometry=117x30 -t "Radio 4000" -- bash -c "~/chemin/vers/sh.radio.4000 " ./radio.sh lire"
+```
+
+## Switching from a menu option to parameter when launching the script
+__Options : "" (nothing → menu), "lire" (read), "ajouter" (add), "enlever" (remove), "archiver" (archive), "desarchiver" (unarchive), "voir détails" (see details), "voir aide" (see help). __
+_Useful to jump the "Menu" step_
+
+Examples:
+- ``` ./radio.sh lire ``` will go directly to the submenu of choice of a station to read
+- ``` ./radio.sh see help ``` for the list of options
+
+# Playing a radio
+Select a radio using the corresponding number and then enter key.
+
+Shortcuts keyboard mpv :
+- Q: Quit the player and return to the main menu
+- 0 : Increase the volume
+- 9: Reduce volume
+- M: Cut the sound
+
+# To do?
+- add other examples of launch keyboard shortcuts according to the different terminals and their syntax.
+- documenting how to add/remove/archive/unsarchive a radio, but it seems intuitive to me.
+
+# Dream
+To redirect the output of mpv in lolcat..
