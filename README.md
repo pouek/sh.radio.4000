@@ -157,6 +157,7 @@ gnome-terminal --geometry=117x30 -t "Radio 4000" -- bash -c "~/chemin/vers/sh.ra
 
 ## Switching from a menu option to parameter when launching the script
 __Options : "" (nothing → menu), "lire" (read), "ajouter" (add), "enlever" (remove), "archiver" (archive), "desarchiver" (unarchive), "voir détails" (see details), "voir aide" (see help). __
+
 _Useful to jump the "Menu" step_
 
 Examples:
@@ -166,7 +167,7 @@ Examples:
 # Playing a radio
 Select a radio using the corresponding number and then enter key.
 
-Keyboard shortcuts mpv :
+Keyboard shortcuts in mpv :
 - Q: Quit the player and return to the main menu
 - 0 : Increase the volume
 - 9: Reduce volume
