@@ -3,7 +3,7 @@ Lecteur et gestionnaire de radios internet, en langage shell, avec mes radios fa
 
 Webradios player and manager, in shell language, with my favorites.
 
-English read-me lower.
+English read-me below.
 
 ## Prérequis
 
