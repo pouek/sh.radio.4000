@@ -88,7 +88,7 @@ Raccourcis clavier mpv :
 - ajouter d'autres exemples de raccourcis clavier de lancement selon les différents terminaux et leurs syntaxes.
 - documenter comment on ajoute/enleve/archive/désarchive une radio, mais ça me paraît intuitif.
 
-## Bonus, le style !
+## Bonus, le style ! _nécessite lolcat_
 Pour rediriger la sortie de mpv dans lolcat :
 Modifier la définition de la fonction _mp_ pour qu'elle finisse comme suit :
 ```
@@ -180,7 +180,7 @@ Keyboard shortcuts in mpv :
 - add other examples of launch keyboard shortcuts according to the different terminals and their syntax.
 - documenting how to add/remove/archive/unsarchive a radio, but it seems intuitive to me.
 
-# Bonus, additionnal style
+# Bonus, additionnal style ! _requires lolcat_
 To redirect the output of mpv in lolcat :
 Modify the _mp_ function definition to end like :
 ```
