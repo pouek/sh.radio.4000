@@ -20,7 +20,7 @@ sudo apt install mpv
 ```
 dnf install packagename
 ```
-- MacOS avec [homebrew](https://brew.sh/) :
+- MacOS (à déboguer) avec [homebrew](https://brew.sh/) :
 ```
 brew install mpv
 ```
@@ -88,9 +88,11 @@ Raccourcis clavier mpv :
 - ajouter d'autres exemples de raccourcis clavier de lancement selon les différents terminaux et leurs syntaxes.
 - documenter comment on ajoute/enleve/archive/désarchive une radio, mais ça me paraît intuitif.
 
-## Rêve
-Pouvoir rediriger la sortie de mpv dans lolcat..
-
+## Bonus, le style !
+Pour rediriger la sortie de mpv dans lolcat :
+Modifier la définition de la fonction _mp_ pour qu'elle finisse comme suit :
+```function mp { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null |lolcat;}
+```
 
 # Read me
 Webradios player and manager, in shell language, with my favorites.
@@ -177,5 +179,7 @@ Keyboard shortcuts in mpv :
 - add other examples of launch keyboard shortcuts according to the different terminals and their syntax.
 - documenting how to add/remove/archive/unsarchive a radio, but it seems intuitive to me.
 
-# Dream
-To redirect the output of mpv in lolcat..
+# Bonus, additionnal style
+To redirect the output of mpv in lolcat :
+Modify the _mp_ function definition to end like :
+```function mp { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null |lolcat;}
