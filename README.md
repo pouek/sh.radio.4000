@@ -91,7 +91,8 @@ Raccourcis clavier mpv :
 ## Bonus, le style !
 Pour rediriger la sortie de mpv dans lolcat :
 Modifier la définition de la fonction _mp_ pour qu'elle finisse comme suit :
-```function mp { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null |lolcat;}
+```
+function mp { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null |lolcat;}
 ```
 
 # Read me
@@ -182,4 +183,5 @@ Keyboard shortcuts in mpv :
 # Bonus, additionnal style
 To redirect the output of mpv in lolcat :
 Modify the _mp_ function definition to end like :
-```function mp { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null |lolcat;}
+```
+function mp { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null |lolcat;}
