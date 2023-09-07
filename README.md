@@ -3,7 +3,7 @@ Lecteur et gestionnaire de radios internet, en langage shell, avec mes radios fa
 
 Webradios player and manager, in shell language, with my favorites.
 
-English read-me below.
+[English read-me below.](https://github.com/pouek/sh.radio.4000#english-read-me)
 
 ## Prérequis
 
@@ -95,7 +95,7 @@ Modifier la définition de la fonction _mp_ pour qu'elle finisse comme suit :
 function mp { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --audio-buffer=10 --volume=80" /dev/null |lolcat;}
 ```
 
-# Read me
+# English read-me
 Webradios player and manager, in shell language, with my favorites.
 
 # Prerequisites
