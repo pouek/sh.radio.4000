@@ -60,7 +60,7 @@ function enregistre {
     for clef in "${archives_ord[@]}";do
         echo "$clef : ${archives[$clef]}"
     done
-    oui_non "Enregistrer ?" && ecris
+    oui_non "Enregistrer ? " && ecris
     menu
 }
 # Fonctions qui lisent les flux
@@ -95,7 +95,7 @@ en lecture : 9-0 volume, p pause, m silence
 }
 # Fonction d'ajout de favori à la liste
 function ajoute {
-    read -p "Quel est le nom de la radio ?" nom
+    read -p "Quel est le nom de la radio ? " nom
     read -p "Quel est l'adresse du flux ? " flux
     echo "Test du flux, Ctrl+C pour revenir" ; sleep 1 ; 
     mp "$flux" ; 
@@ -106,7 +106,7 @@ function ajoute {
 }
 # Fonction de retrait d'une station
 function enleve {
-	PS3="Enlever un favori ou une archive ?" 
+	PS3="Enlever un favori ou une archive ? " 
 	select type in "favori" "archive"
 	do
 		case "$type" in
@@ -240,7 +240,7 @@ function menu {
 			informe ;;
 		"quitter")
 			exit 0 ;;
-		*) echo "Qu'entends-tu par $REPLY ?" ;;
+		*) echo "Qu'entends-tu par $REPLY ? " ;;
 		esac
 	done
 }
