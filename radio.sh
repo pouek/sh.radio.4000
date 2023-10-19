@@ -64,8 +64,8 @@ function enregistre {
     menu
 }
 # Fonctions qui lisent les flux
-function mpo { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2 ; } #|lolcat : }
-function mp { echo -e "\033]2;$opt\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --cache-secs=5 --volume=80" /dev/null | grep -v "File tags:" ; } #|lolcat;}
+function mpo { echo -e "\033]2;$opt - Menu : Ctrl+C\007"; echo -e "Lecture de $opt"; mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2 ; } #|lolcat : }
+function mp { echo -e "\033]2;$opt - Menu : Ctrl+C\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --cache-secs=5 --volume=80" /dev/null | grep -v "File tags:" ; } #|lolcat;}
 # Fonction propose les stations à lire, et les lis
 function lis {
 	PS3='Quel est le numéro de la radio à lire ? 
