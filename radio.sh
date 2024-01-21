@@ -210,7 +210,7 @@ function edite {
 				    echo 'Flux actuel : ${favoris["$opt"]}'
     				    if $(oui_non "Remplacer le flux ?"); then
 					read -p "Par quelle adresse le remplacer ? " flux
-				    fi # && fx_ok=1 || fx_ok=0
+				    fi
     				    if $(oui_non "Renommer le favori ?"); then
 					read -p "Quel nouveau nom utiliser ? " nom
 				    fi
