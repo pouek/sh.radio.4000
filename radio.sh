@@ -65,7 +65,7 @@ function enregistre {
 }
 # Fonctions qui lisent les flux
 function mpo { echo -e "\033]2;$opt - Menu : Ctrl+C\007"; echo -e "Lecture de $opt"; mplayer  -msglevel all=-1:demuxer=4:network=4 -cache 2048 $1 $2 ; } #|lolcat : }
-function mp { echo -e "\033]2;$opt - Menu : Ctrl+C\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --cache-secs=5 --volume=80" /dev/null | grep -v "File tags:" ; } #|lolcat;}
+function mp { echo -e "\033]2;$opt - Menu : Ctrl+C\007"; echo -e "Lecture de $opt"; script -c "mpv $1 --cache-secs=5 --volume=80" /dev/null |lolcat;}
 # Fonction propose les stations à lire, et les lis
 function lis {
 	PS3='Quel est le numéro de la radio à lire ? 
@@ -196,7 +196,7 @@ menu
 }
 # Fonction d'édition d'un favori
 function edite {
-	PS3='Quel est le numéro de la radio à éditer ? 
+	PS3='Quel est le numéro de la radio à éditer ?
 0 pour retourner au menu principal
 '
 	select opt in "${favoris_ord[@]}"
@@ -205,13 +205,20 @@ function edite {
 				"")
 				    menu ;;
 				*)
-				    echo "Flux actuel : ${favoris["$opt"]} "
-    				    read -p "Par quelle adresse lz remplacer ? " flux
-    				    echo "Test du flux, Ctrl+C pour revenir" ; sleep 1 ; 
-                                    mp "$flux" ; 
-                                    if $(oui_non "Le nom '$opt' est correct et le flux audible ? "); then
-		                        favoris["$opt"]="$flux" ; enregistre
-	                            else echo "Pas de soucis, on recommence !" && ajoute
+				    flux="${favoris[${opt}]}"; nom="$opt";
+				    echo "Test de lecture du flux, Ctrl+C pour revenir" ; sleep 2 ; mp "$flux"
+				    echo 'Flux actuel : ${favoris["$opt"]}'
+    				    if $(oui_non "Remplacer le flux ?"); then
+					read -p "Par quelle adresse le remplacer ? " flux
+				    fi # && fx_ok=1 || fx_ok=0
+    				    if $(oui_non "Renommer le favori ?"); then
+					read -p "Quel nouveau nom utiliser ? " nom
+				    fi
+				    echo "Test de lecture du flux, Ctrl+C pour revenir" ; sleep 2 ; mp "$flux"
+                                    if $(oui_non "Le nom $nom est correct et le flux audible ? "); then
+		                        unset 'favoris[$opt]'
+					favoris["$nom"]="$flux" ; enregistre
+	                            else echo "Pas de soucis, on recommence !" && edite
 				    fi ;;
 			esac
 		done

@@ -1,4 +1,5 @@
 8bit.fm Radio	http://8bit.fm:8000/live
+Aligre fm	https://stream3.vestaradio.com/aligrefmradio
 Ambient Sleeping Pill	https://radio.stereoscenic.com/asp-s
 Another Planet	http://stream.anotherplanet.fm:2199/tunein/shoutcast.pls
 Balla Radio	http://192.99.35.93:5730
@@ -29,19 +30,29 @@ KBOO	http://live.kboo.fm:8000/high
 La Grosse Radio-Reggae	http://hd.lagrosseradio.info/lagrosseradio-reggae-192.mp3
 LeDjam Radio	http://www.djamradio.com/sound
 Long Player	http://icecast.spc.org:8000/longplayer.m3u
+Lyl Radio	https://icecast.lyl.live/live
 Mradio musique	http://37.221.196.27:8022
-NTS-100% Hip Hop	https://stream-mixtape-geo.ntslive.net/mixtape2
-NTS-Slow Focus	https://stream-mixtape-geo.ntslive.net/mixtape7
 Nova	http://novazz.ice.infomaniak.ch/novazz-128.mp3
 Nova-Bordeaux	http://snb.ice.infomaniak.ch/snb-high.mp3
 Nova-La nuit	http://nova-ln.ice.infomaniak.ch/nova-ln-128.mp3
 Nova-Lyon	http://snb.ice.infomaniak.ch/snb-high.mp3
 Nova-Vintage	http://nova-vnt.ice.infomaniak.ch/nova-vnt-128.mp3
+NTS-4 To The Floor	https://stream-mixtape-geo.ntslive.net/mixtape5
+NTS-Expansion (Jazz..)	https://stream-mixtape-geo.ntslive.net/mixtape3
+NTS-Field Recordings	https://stream-mixtape-geo.ntslive.net/mixtape23
+NTS-Labyrinth	https://stream-mixtape-geo.ntslive.net/mixtape31
+NTS-Low Key	https://stream-mixtape-geo.ntslive.net/mixtape2
+NTS-Memory Lane	https://stream-mixtape-geo.ntslive.net/mixtape6
+NTS-Rap House	https://stream-mixtape-geo.ntslive.net/mixtape22
+NTS-Sheet Music	https://stream-mixtape-geo.ntslive.net/mixtape35
+NTS-Slow Focus	https://stream-mixtape-geo.ntslive.net/mixtape
 Onde Courte	http://stream.ondecourte.fr/radio.ogg
 Phaune Radio	http://stream.phauneradio.com/phaune_256
+Pinata Radio	https://listen.radioking.com/radio/96031/stream/134656
 Plum FM	http://plumfm.online.radiobreizh.bzh/live.mp3
 Prun'	http://streaming.prun.net/streamprun.m3u
 Radio Canuts	http://live.francra.org:8000/radiocanut?alea=MjAxOS0wNy0yNCAyMzozODowMw==
+Radio Grenouille	https://live.radiogrenouille.com:8443/live
 Radio Gumbé	http://149.56.183.178:8548/stream/1/
 Radio Larzac	http://stream.radiolarzac.org:8000/radiolarzac
 Radio Meuh	http://radiomeuh.ice.infomaniak.ch/radiomeuh-128.mp3
@@ -54,9 +65,8 @@ Seven Inch Soul	https://somafm.com/7soul.pls
 SomaFM-BAGel Radio	https://somafm.com/bagel.pls
 SomaFM-Beat Blender	https://somafm.com/beatblender130.pls
 SomaFM-Cliqhop IDM	https://ice2.somafm.com/cliqhop-256-mp3
-SomaFM-DEF CON Radio	https://somafm.com/defcon256.pls
-SomaFM-DOOMED	https://somafm.com/doomed.pls
 SomaFM-Deep Space One	https://somafm.com/deepspaceone.pls
+SomaFM-DEF CON Radio	https://somafm.com/defcon256.pls
 SomaFM-Drone Zone	https://somafm.com/dronezone256.pls
 SomaFM-Fluid	https://somafm.com/fluid.pls
 SomaFM-Groove Salad	https://somafm.com/groovesalad256.pls
