@@ -19,7 +19,7 @@ sudo apt install mpv
 ```
 - Fedora et dérivés :
 ```
-dnf install packagename
+dnf install mpv
 ```
 - MacOS (à déboguer) avec [homebrew](https://brew.sh/) :
 ```
